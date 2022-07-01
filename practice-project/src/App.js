@@ -1,5 +1,25 @@
+import { Route, Switch, Redirect } from "react-router-dom";
+import NewQuote from "./pages/NewQuote";
+import QuoteDetail from "./pages/QuoteDetail";
+import Quotes from "./pages/Quotes";
+
 function App() {
-  return <div>hello</div>;
+  return (
+    <Switch>
+      <Route path="/" exact>
+        <Redirect to="/quotes" />
+      </Route>
+      <Route path="/quotes" exact>
+        <Quotes />
+      </Route>
+      <Route path="/quotes/new">
+        <NewQuote />
+      </Route>
+      <Route path="/quotes/:quoteId">
+        <QuoteDetail />
+      </Route>
+    </Switch>
+  );
 }
 
 export default App;
