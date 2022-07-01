@@ -1,8 +1,7 @@
 import { useRef } from 'react';
-
-import Card from '../ui/Card';
-import LoadingSpinner from '../ui/LoadingSpinner';
 import classes from './QuoteForm.module.css';
+import LoadingSpinner from '../UI/LoadingSpinner';
+import Card from "../UI/Card";
 
 const QuoteForm = (props) => {
   const authorInputRef = useRef();
