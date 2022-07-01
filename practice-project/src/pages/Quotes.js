@@ -7,7 +7,7 @@ const DUMMY_QUOTES = [
     author: "John Smith",
   },
   {
-    id: "q1",
+    id: "q2",
     text: "I'm another dummy quote",
     author: "John Smith",
   },
