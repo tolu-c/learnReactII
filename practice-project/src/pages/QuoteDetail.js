@@ -1,6 +1,7 @@
 import { Route, useParams } from "react-router-dom";
 import Comments from '../components/comments/Comments';
 import HighlightedQuote from "../components/quotes/HighlightedQuote";
+import NotFound from "./NotFound";
 
 const DUMMY_QUOTES = [
   {
@@ -22,7 +23,7 @@ const QuoteDetail = () => {
   const quote = DUMMY_QUOTES.find((quote) => quote.id === quoteId);
 
   if (!quote) {
-    return <div>Quote not found</div>;
+    return <NotFound />;
   }
 
   return (
