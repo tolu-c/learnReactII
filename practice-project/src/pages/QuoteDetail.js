@@ -38,7 +38,7 @@ const QuoteDetail = () => {
     );
   }
 
-  if (!loadedQuote) {
+  if (!loadedQuote.text) {
     return <NotFound />;
   }
 
