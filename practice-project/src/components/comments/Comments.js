@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';  
 
 import classes from './Comments.module.css';
 import NewCommentForm from './NewCommentForm';
 
 const Comments = () => {
   const [isAddingComment, setIsAddingComment] = useState(false);
+  const params = useParams()
 
   const startAddCommentHandler = () => {
     setIsAddingComment(true);
@@ -18,7 +20,7 @@ const Comments = () => {
           Add a Comment
         </button>
       )}
-      {isAddingComment && <NewCommentForm />}
+      {isAddingComment && <NewCommentForm quoteId={} onAddedComment={} />}
       <p>Comments...</p>
     </section>
   );
