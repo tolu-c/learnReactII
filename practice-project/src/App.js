@@ -14,7 +14,7 @@ const Quotes = React.lazy(() => import("./pages/Quotes"));
 
 function App() {
   return (
-    <Layout>s
+    <Layout>
       <Suspense
         fallback={
           <div className="centered">
