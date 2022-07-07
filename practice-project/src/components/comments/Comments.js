@@ -5,7 +5,6 @@ import { getAllComments } from "../../lib/api";
 import LoadingSpinner from "../UI/LoadingSpinner";
 import CommentsList from "./CommentsList";
 
-import classes from "./Comments.module.css";
 import NewCommentForm from "./NewCommentForm";
 
 const Comments = () => {
@@ -30,7 +29,7 @@ const Comments = () => {
   let comments;
   if (status === "pending") {
     comments = (
-      <div className="centered">
+      <div className="mx-auto w-max">
         <LoadingSpinner />
       </div>
     );
@@ -44,14 +43,13 @@ const Comments = () => {
     status === "completed" &&
     (!loadedComments || loadedComments.length === 0)
   ) {
-    comments = <p className="centered">No comments yet</p>;
+    comments = <p className="w-max text-gray-600 italic font-lato">No comments yet</p>;
   }
 
   return (
-    <section className={classes.comments}>
-      <h2>User Comments</h2>
+    <section className=''>
       {!isAddingComment && (
-        <button className="btn" onClick={startAddCommentHandler}>
+        <button className="text-base md:text-lg font-lato capitalize hover:underline text-gray-700 hover:text-gray-800" onClick={startAddCommentHandler}>
           Add a Comment
         </button>
       )}
