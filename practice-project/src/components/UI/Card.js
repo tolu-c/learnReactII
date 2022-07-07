@@ -1,7 +1,9 @@
-import classes from './Card.module.css';
-
 const Card = (props) => {
-  return <div className={classes.card}>{props.children}</div>;
+  return (
+    <div className="p-4 bg-white rounded-lg shadow-lg m-4 border border-gray-200">
+      {props.children}
+    </div>
+  );
 };
 
 export default Card;
