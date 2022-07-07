@@ -1,12 +1,11 @@
 import { Fragment } from "react";
-import classes from "./Layout.module.css";
 import MainNavigation from "./MainNavigation";
 
 const Layout = ({ children }) => {
   return (
     <Fragment>
       <MainNavigation />
-      <main className={classes.main}>{children}</main>
+      <main className='mx-auto my-12 w-5/6 max-w-lg lg:max-w-xl'>{children}</main>
     </Fragment>
   );
 };
