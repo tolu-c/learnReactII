@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
-import classes from "./QuoteItem.module.css";
 
 const QuoteItem = (props) => {
   return (
-    <li className={classes.item}>
-      <figure>
+    <li className="flex flex-col gap-y-4 p-3 bg-teal-400/50 text-slate-800 shadow-md rounded-md">
+      <figure className="flex flex-col gap-y-2">
+        <figcaption className="font-lato text-sm italic font-normal capitalize text-slate-900">
+          {props.author}
+        </figcaption>
         <blockquote>
-          <p>{props.text}</p>
+          <p className="font-merri text-lg font-semibold">
+            {props.text}
+          </p>
         </blockquote>
-        <figcaption>{props.author}</figcaption>
       </figure>
       <Link to={`/quotes/${props.id}`} className="btn">
         View Fullscreen

@@ -19,7 +19,7 @@ const Quotes = () => {
 
   if (status === "pending") {
     return (
-      <div className="centered">
+      <div className="flex justify-center">
         <LoadingSpinner />
       </div>
     );
@@ -27,7 +27,9 @@ const Quotes = () => {
 
   if (error) {
     return (
-      <p className="centered focused">Error while fetching quotes. {error}</p>
+      <p className="flex justify-center">
+        Error while fetching quotes. {error}
+      </p>
     );
   }
 

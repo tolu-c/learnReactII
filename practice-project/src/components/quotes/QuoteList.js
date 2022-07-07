@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 
 import QuoteItem from "./QuoteItem";
-import classes from "./QuoteList.module.css";
 
 const sortQuotes = (quotes, ascending) => {
   return quotes.sort((quoteA, quoteB) => {
@@ -35,13 +34,16 @@ const QuoteList = (props) => {
 
   return (
     <Fragment>
-      <div className={classes.sorting}>
-        <button onClick={changeSortHandler}>
+      <div className="flex">
+        <button
+          onClick={changeSortHandler}
+          className="px-4 py-2 text-base font-lato border border-teal-500 rounded-md text-teal-600 hover:bg-teal-700 hover:border-none hover:text-teal-100 flex-none"
+        >
           Sort {isSortingAscending ? "Descending" : "Ascending"}
         </button>
       </div>
 
-      <ul className={classes.list}>
+      <ul className='flex flex-col gap-y-4 my-4'>
         {sortedQuotes.map((quote) => (
           <QuoteItem
             key={quote.id}

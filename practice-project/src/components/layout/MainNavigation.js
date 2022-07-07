@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const MainNavigation = () => {
   return (
-    <header className="flex items-center justify-between px-8 py-4 md:py-8 md:px-12 bg-teal-700">
+    <header className="flex items-center justify-between p-4 md:py-8 md:px-12 bg-teal-700">
       <div className="text-xl md:text-2xl lg:text-4xl text-white font-bold font-merri">
         Great Quotes
       </div>
