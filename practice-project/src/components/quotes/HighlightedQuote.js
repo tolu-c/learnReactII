@@ -1,7 +1,7 @@
 const HighlightedQuote = (props) => {
   return (
-    <div className="flex flex-col gap-y-4 mt-20 my-6">
-      <figure className="mx-auto p-6 py-10 bg-transparent rounded-md flex flex-col gap-y-8">
+    <div className="flex flex-col gap-y-6 mt-20 my-6">
+      <figure className="mx-auto p-6 py-10 bg-transparent border border-slate-200 shadow-md rounded-md flex flex-col gap-y-8">
         <p className="text-3xl text-gray-900 font-merri font-bold drop-shadow-md">
           {props.text}
         </p>
