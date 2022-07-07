@@ -1,11 +1,11 @@
 const HighlightedQuote = (props) => {
   return (
     <div className="flex flex-col gap-y-6 mt-20 my-6">
-      <figure className="mx-auto p-6 py-10 bg-transparent border border-slate-200 shadow-md rounded-md flex flex-col gap-y-8">
-        <p className="text-3xl text-gray-900 font-merri font-bold drop-shadow-md">
+      <figure className="mx-auto p-6 py-10 bg-slate-600 border border-slate-200 shadow-md rounded-md flex flex-col gap-y-8">
+        <p className="text-3xl text-stone-100 font-merri font-bold drop-shadow-[0_1px_2px_rgba(241,245,249,0.25)]">
           {props.text}
         </p>
-        <figcaption className="self-end font-lato text-base text-gray-700 italic capitalize font-bold">
+        <figcaption className="self-end font-lato text-base text-stone-100 italic capitalize font-bold">
           - {props.author}
         </figcaption>
       </figure>
