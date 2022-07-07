@@ -47,8 +47,8 @@ const QuoteDetail = () => {
       <HighlightedQuote text={loadedQuote.text} author={loadedQuote.author} />
 
       <Route path={match.path} exact>
-        <div className="centered">
-          <Link className="btn--flat" to={`${match.url}/comments`}>
+        <div className="w-max mx-auto">
+          <Link className="font-merri text-lg text-slate-800 capitalize" to={`${match.url}/comments`}>
             Load comments
           </Link>
         </div>
