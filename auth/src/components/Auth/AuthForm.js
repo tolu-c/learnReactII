@@ -7,7 +7,7 @@ const AuthForm = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
 
-  const authCtx = useContext(AuthContext)
+  const authCtx = useContext(AuthContext);
 
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
@@ -60,11 +60,14 @@ const AuthForm = () => {
         }
       })
       .then((data) => {
-        authCtx.login(data.idToken)
+        authCtx.login(data.idToken);
       })
       .catch((err) => {
         alert(err.message);
       });
+
+    emailRef.current.value = "";
+    passwordRef.current.value = "";
   };
 
   return (
