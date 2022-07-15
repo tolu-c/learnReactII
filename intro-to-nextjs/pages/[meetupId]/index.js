@@ -11,9 +11,20 @@ const MeetupDetail = () => {
   );
 };
 
+export default MeetupDetail;
+
+export async function getStaticPaths() {
+  return {
+    fallback: false,
+    paths: [{ params: { meetupId: "m1" } }, { params: { meetupId: "m2" } }],
+    fallback: false,
+  };
+}
+
 export async function getStaticProps(context) {
   const meetupId = context.params.meetupId;
   console.log(meetupId);
+
   return {
     props: {
       meetup: {
@@ -27,5 +38,3 @@ export async function getStaticProps(context) {
     },
   };
 }
-
-export default MeetupDetail;
