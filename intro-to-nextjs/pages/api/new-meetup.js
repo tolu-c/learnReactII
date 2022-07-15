@@ -20,10 +20,6 @@ const handler = async (req, res) => {
     res.status(201).json({
       status: "success",
       message: "Meetup created successfully",
-      data: {
-        ...data,
-        id: result.insertedId,
-      },
     });
   }
 };

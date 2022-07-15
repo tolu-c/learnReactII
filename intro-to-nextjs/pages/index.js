@@ -1,3 +1,4 @@
+import { MongoClient } from "mongodb";
 import MeetupList from "../components/meetups/MeetupList";
 
 const DUMMY_MEETUPS = [
@@ -24,21 +25,25 @@ const HomePage = ({ meetups }) => {
 };
 
 export async function getStaticProps() {
+  const client = await MongoClient.connect(
+    "mongodb+srv://tolu:IRe3qTIZ0mBL1oEJ@intro-to-next.5axcp.mongodb.net/meetups?retryWrites=true&w=majority"
+  );
+  const db = client.db();
+  const meetupsCollection = db.collection("meetups");
+  const meetups = await meetupsCollection.find().toArray()
+  client.close();
+
   return {
     props: {
-      meetups: DUMMY_MEETUPS,
+      meetups: meetups.map(meetup => ({
+        title: meetup.title,
+        image: meetup.image,
+        address: meetup.address,
+        id: meetup._id.toString()
+      })),
     },
     revalidate: 100,
   };
 }
-
-// export async function getServerSideProps(context) {
-//   const { req, res } = context;
-//   return {
-//     props: {
-//       meetups: DUMMY_MEETUPS,
-//     },
-//   };
-// }
 
 export default HomePage;
