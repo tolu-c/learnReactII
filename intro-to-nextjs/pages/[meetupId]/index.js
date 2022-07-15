@@ -9,17 +9,14 @@ const MeetupDetail = ({ meetup }) => {
     <Fragment>
       <Head>
         <title>{title}</title>
-        <meta
-          name="description"
-          content={description}
-        />
+        <meta name="description" content={description} />
       </Head>
-        <MeetUpDetail
-          image={image}
-          title={title}
-          address={address}
-          description={description}
-        />
+      <MeetUpDetail
+        image={image}
+        title={title}
+        address={address}
+        description={description}
+      />
     </Fragment>
   );
 };
